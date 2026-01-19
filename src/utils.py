@@ -1,9 +1,9 @@
 from typing import List
 import json
 
-def save_json(data:dict, loc:str) -> None:
-    with open(loc, "w") as f:
-            f.write(json.dumps(data, indent=4))
+def save_json(data: dict, loc: str) -> None:
+    with open(loc, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 def get_selected_powerplants():
     with open("data/selected_powerplants.json", "r", encoding="utf8") as f:
