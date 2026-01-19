@@ -15,8 +15,6 @@ class EpiasTransparencyerServices:
         """
         EPIAS Seffaflik Ticket Granting Ticket (TGT) Servisi
         """
-        with  open(r"C:\Python\data\password\epias_transparency.json", "r", encoding="utf8") as f:
-            user_info = json.load(f)
         
         response = requests.post(
             # "https://giris-prp.epias.com.tr/cas/v1/tickets", # test environment
