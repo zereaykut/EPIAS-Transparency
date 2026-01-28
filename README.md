@@ -37,7 +37,7 @@ The project is organized into a modular structure separating configuration, data
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/zereaykut/EVDS.git](https://github.com/zereaykut/EVDS.git)
+    git clone [https://github.com/zereaykut/EPIAS-Transparency.git](https://github.com/zereaykut/EPIAS-Transparency.git)
     cd EVDS
     ```
 
