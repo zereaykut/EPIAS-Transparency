@@ -31,6 +31,7 @@ The project is organized into a modular structure separating configuration, data
 ├── .env                                # Secrets (Username/Password)
 ├── requirements.txt                    # Python dependencies
 └── README.md
+```
 
 ## ⚙️ Installation
 
