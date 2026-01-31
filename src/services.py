@@ -120,6 +120,44 @@ class EpiasTransparencyerServices:
             payload["powerPlantId"] = powerplant_id
         return self._post("v1/production/data/dpp", tgt, payload)
 
+    def fdpp(self, tgt: str, start_date: str, end_date: str, organization_id: Union[int, None] = None, powerplant_id: Union[int, None] = None) -> requests.Response:
+        """
+        Kesinleşmiş Günlük Üretim Planı (KGÜP) - Final Daily Production Plan
+        Endpoint: v1/production/data/final-daily-production-plan
+        """
+        payload = self._format_dates(start_date, end_date)
+        if organization_id:
+            payload["organizationId"] = organization_id
+        if powerplant_id:
+            payload["powerPlantId"] = powerplant_id
+        return self._post("v1/production/data/final-daily-production-plan", tgt, payload)
+
+    def aic(self, tgt: str, start_date: str, end_date: str, organization_id: Union[int, None] = None, powerplant_id: Union[int, None] = None) -> requests.Response:
+        """
+        Emre Amade Kapasite (EAK) - Available Capacity
+        Endpoint: v1/production/data/aic
+        Note: EAK often corresponds to 'aic' (Available Installed Capacity) in EPIAS services.
+        If 'aic' was already defined as 'sfy_capacity', this is an alias or the specific EAK endpoint.
+        """
+        payload = self._format_dates(start_date, end_date)
+        if organization_id:
+            payload["organizationId"] = organization_id
+        if powerplant_id:
+            payload["powerPlantId"] = powerplant_id
+        return self._post("v1/production/data/aic", tgt, payload)
+
+    def initial_fdpp(self, tgt: str, start_date: str, end_date: str, organization_id: Union[int, None] = None, powerplant_id: Union[int, None] = None) -> requests.Response:
+        """
+        İlk KGÜP - Initial Daily Production Plan
+        Endpoint: v1/production/data/initial-daily-production-plan
+        """
+        payload = self._format_dates(start_date, end_date)
+        if organization_id:
+            payload["organizationId"] = organization_id
+        if powerplant_id:
+            payload["powerPlantId"] = powerplant_id
+        return self._post("v1/production/data/initial-daily-production-plan", tgt, payload)
+
     def sfy_capacity(self, tgt: str, start_date: str, end_date: str) -> requests.Response:
         """SFY Kapasite Listeleme Servisi (AIC)"""
         payload = self._format_dates(start_date, end_date)
